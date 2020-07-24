@@ -5,29 +5,29 @@ if (votingAge > 18) {
     console.log(true)
 }
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+let var1 = 5;
+let var2 = 10;
 
-
-
-
+if (var2 = 10) {
+  var1 = 9;
+}
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-
-
-
-
+let a = '1999';
+Number(a);
 
 //Task d: Write a function to multiply a*b 
-
-
-
-
+let multiplyFunc = function (a,b) {
+    return a*b
+}
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-
-
+let dogAge = function (age) {
+  return age * 7
+}
 
 
 /************************************************************** Task 3 **************************************************************/
