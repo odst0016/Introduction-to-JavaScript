@@ -48,8 +48,25 @@ let dogAge = function (age) {
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
-
-
+let dogFeeder = function (weight,age) {
+    if (age < .17 && age > .082){
+      return weight * .1
+    }else if (age > .17 && age < .583) {
+      return weight * .05
+    }else if (age > .583 && age < 1) {
+      return weight * .04
+    }else if (age >= 1 && weight <= 5) {
+      return weight * .05
+    }else if (age >= 1 && weight <= 10 && weight >= 6) {
+      return weight * .04
+    }else if (age >= 1 && weight <= 15 && weight >= 11) {
+      return weight * .03
+    }else if (age >= 1 && weight >= 15) {
+      return weight * .02
+    }
+  }
+  
+  dogFeeder(15,1)
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -65,14 +82,22 @@ let dogAge = function (age) {
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
+let kmToMiles = function (km) {
+    return km * .621371
+}
 
+kmToMiles(25)
 
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
+let feetToCM = function (foot) {
+    return foot * 30.48
+}
 
+feetToCM(25)
 
 
 
@@ -81,7 +106,9 @@ let dogAge = function (age) {
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-
+for (let i= 99; i>=1; i--) {
+    console.log(""+i+" bottles of soda on the wall, "+i+" bottles of soda, take one down pass it around "+(i-1)+" bottles of soda on the wall")
+  }
 
 
 
@@ -94,7 +121,19 @@ let dogAge = function (age) {
 //60s should be D 
 //and anything below 60 should be F
   
-
+let gradeCalculator = function(grade) {
+    if (grade >= 90){
+      return "A"
+    }else if (grade >= 80){
+      return "B" 
+    }else if (grade >= 80){
+      return "C" 
+    }else if (grade >= 60){
+      return "D" 
+    }else if (grade < 60){
+      return "F" 
+    }
+  }
   
   
 
