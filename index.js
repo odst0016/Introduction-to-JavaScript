@@ -76,7 +76,43 @@ let dogFeeder = function (weight,age) {
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
+  //1 = rock, 2 = paper, 3 = scissors
+var computerChoice = function () {
+  let choice = Math.random();
+  if(choice < .34){
+    return 1;
+  }else if (choice >= .34 && choice < .67){
+    return 2;
+  }else{
+    return 3;
+  }
+}
+
+let comRPS = computerChoice();
+
+var rpsGame = function(compC, playerC) {
+  if (compC == 1 && playerC ==1 ) {
+    console.log("Computer also chose rock it's a tie")
+  }else if (compC == 1 && playerC == 2) {
+    console.log("Computer chose rock you win")
+  }else if (compC == 1 && playerC == 3) {
+    console.log("Computer chose rock computer wins")
+  }else if (compC == 2 && playerC == 1) {
+    console.log("Computer chose paper computer wins")
+  }else if (compC == 2 && playerC == 2) {
+    console.log("Computer also chose paper its a tie")
+  }else if (compC == 2 && playerC == 3) {
+    console.log("Computer chose paper you win")
+  }else if (compC == 3 && playerC == 2) {
+    console.log("Computer chose scissors computer wins")
+  }else if (compC == 3 && playerC == 1) {
+    console.log("Computer chose scissors you win")
+  }else if (compC == 3 && playerC == 3) {
+    console.log("Computer also chose scissors its a tie")
+  }
+}
+// put 1 for rock 2 for paper or 3 for scissors
+rpsGame(comRPS,2)
   
 
 /************************************************************** Task 5 **************************************************************/
@@ -150,7 +186,60 @@ let gradeCalculator = function(grade) {
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
+let playerChoice = prompt("Choose: Rock, Paper, or Scissors");
+let pc = playerChoice.toLowerCase();
+console.log(pc);
 
+var playerChoiceNumber = function(c) {
+  if (c == 'rock'){
+    return 1;
+  }else if (c == 'paper'){
+    return 2;
+  }else if (c == 'scissors') {
+    return 3;
+  }else {
+    console.log("Hmm appears you didnt choose a correct choice");
+  }
+}
+
+//1 = rock, 2 = paper, 3 = scissors
+var computerChoice = function () {
+  let choice = Math.random();
+  if(choice < .34){
+    return 1;
+  }else if (choice >= .34 && choice < .67){
+    return 2;
+  }else{
+    return 3;
+  }
+}
+let playerC = 2;
+let plaRPS = playerChoiceNumber(pc);
+let comRPS = computerChoice();
+
+var rpsGame = function(compC, playerC) {
+  if (compC == 1 && playerC ==1 ) {
+    console.log("Computer also chose rock it's a tie")
+  }else if (compC == 1 && playerC == 2) {
+    console.log("Computer chose rock you win")
+  }else if (compC == 1 && playerC == 3) {
+    console.log("Computer chose rock computer wins")
+  }else if (compC == 2 && playerC == 1) {
+    console.log("Computer chose paper computer wins")
+  }else if (compC == 2 && playerC == 2) {
+    console.log("Computer also chose paper its a tie")
+  }else if (compC == 2 && playerC == 3) {
+    console.log("Computer chose paper you win")
+  }else if (compC == 3 && playerC == 2) {
+    console.log("Computer chose scissors computer wins")
+  }else if (compC == 3 && playerC == 1) {
+    console.log("Computer chose scissors you win")
+  }else if (compC == 3 && playerC == 3) {
+    console.log("Computer also chose scissors its a tie")
+  }
+}
+
+rpsGame(comRPS,plaRPS)
 
 
 
