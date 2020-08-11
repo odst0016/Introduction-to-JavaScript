@@ -179,7 +179,8 @@ let gradeCalculator = function(grade) {
 // try looking up the .includes() method
 
 function vowCount(string){
-  let arrToCount = string.split('');
+  let lowerString = string.toLowerCase();
+  let arrToCount = lowerString.split('');
   console.log(arrToCount)
   let vowelTotal = 0;
   for (i in arrToCount){
@@ -189,8 +190,7 @@ function vowCount(string){
   return vowelTotal
 }
 
-console.log(vowCount('is y a vowel the thing goes aeiou and sometimes y meh who knows'))
-
+console.log(vowCount('is y aaAAAAAAa vowel the thing goes aeiou and sometimes y meh who knows'))
 
 
 /************************************************************** Stretch **************************************************************/
