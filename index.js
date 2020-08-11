@@ -178,7 +178,18 @@ let gradeCalculator = function(grade) {
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+function vowCount(string){
+  let arrToCount = string.split('');
+  console.log(arrToCount)
+  let vowelTotal = 0;
+  for (i in arrToCount){
+    if (arrToCount[i] === 'a' ||arrToCount[i] === 'e' ||arrToCount[i] === 'i' ||arrToCount[i] === 'o' ||arrToCount[i] === 'u' ||arrToCount[i] === 'y')
+     vowelTotal = vowelTotal + 1;
+  }
+  return vowelTotal
+}
 
+console.log(vowCount('is y a vowel the thing goes aeiou and sometimes y meh who knows'))
 
 
 
