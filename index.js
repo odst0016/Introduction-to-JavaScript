@@ -1,34 +1,33 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
-
-
-
-
-
+let votingAge;
+if (votingAge > 18) {
+    console.log(true)
+}
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+let var1 = 5;
+let var2 = 10;
 
-
-
-
+if (var2 = 10) {
+  var1 = 9;
+}
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-
-
-
-
+let a = '1999';
+Number(a);
 
 //Task d: Write a function to multiply a*b 
-
-
-
-
+let multiplyFunc = function (a,b) {
+    return a*b
+}
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-
-
+let dogAge = function (age) {
+  return age * 7
+}
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -49,8 +48,25 @@
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
-
-
+let dogFeeder = function (weight,age) {
+    if (age < .17 && age > .082){
+      return weight * .1
+    }else if (age > .17 && age < .583) {
+      return weight * .05
+    }else if (age > .583 && age < 1) {
+      return weight * .04
+    }else if (age >= 1 && weight <= 5) {
+      return weight * .05
+    }else if (age >= 1 && weight <= 10 && weight >= 6) {
+      return weight * .04
+    }else if (age >= 1 && weight <= 15 && weight >= 11) {
+      return weight * .03
+    }else if (age >= 1 && weight >= 15) {
+      return weight * .02
+    }
+  }
+  
+  dogFeeder(15,1)
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -60,20 +76,64 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
+  //1 = rock, 2 = paper, 3 = scissors
+var computerChoice = function () {
+  let choice = Math.random();
+  if(choice < .34){
+    return 1;
+  }else if (choice >= .34 && choice < .67){
+    return 2;
+  }else{
+    return 3;
+  }
+}
+
+let comRPS = computerChoice();
+
+var rpsGame = function(compC, playerC) {
+  if (compC == 1 && playerC ==1 ) {
+    console.log("Computer also chose rock it's a tie")
+  }else if (compC == 1 && playerC == 2) {
+    console.log("Computer chose rock you win")
+  }else if (compC == 1 && playerC == 3) {
+    console.log("Computer chose rock computer wins")
+  }else if (compC == 2 && playerC == 1) {
+    console.log("Computer chose paper computer wins")
+  }else if (compC == 2 && playerC == 2) {
+    console.log("Computer also chose paper its a tie")
+  }else if (compC == 2 && playerC == 3) {
+    console.log("Computer chose paper you win")
+  }else if (compC == 3 && playerC == 2) {
+    console.log("Computer chose scissors computer wins")
+  }else if (compC == 3 && playerC == 1) {
+    console.log("Computer chose scissors you win")
+  }else if (compC == 3 && playerC == 3) {
+    console.log("Computer also chose scissors its a tie")
+  }
+}
+// put 1 for rock 2 for paper or 3 for scissors
+rpsGame(comRPS,2)
   
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
+let kmToMiles = function (km) {
+    return km * .621371
+}
 
+kmToMiles(25)
 
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
+let feetToCM = function (foot) {
+    return foot * 30.48
+}
 
+feetToCM(25)
 
 
 
@@ -82,7 +142,9 @@
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-
+for (let i= 99; i>=1; i--) {
+    console.log(""+i+" bottles of soda on the wall, "+i+" bottles of soda, take one down pass it around "+(i-1)+" bottles of soda on the wall")
+  }
 
 
 
@@ -95,7 +157,19 @@
 //60s should be D 
 //and anything below 60 should be F
   
-
+let gradeCalculator = function(grade) {
+    if (grade >= 90){
+      return "A"
+    }else if (grade >= 80){
+      return "B" 
+    }else if (grade >= 80){
+      return "C" 
+    }else if (grade >= 60){
+      return "D" 
+    }else if (grade < 60){
+      return "F" 
+    }
+  }
   
   
 
@@ -104,15 +178,79 @@
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+function vowCount(string){
+  let lowerString = string.toLowerCase();
+  let arrToCount = lowerString.split('');
+  console.log(arrToCount)
+  let vowelTotal = 0;
+  for (i in arrToCount){
+    if (arrToCount[i] === 'a' ||arrToCount[i] === 'e' ||arrToCount[i] === 'i' ||arrToCount[i] === 'o' ||arrToCount[i] === 'u' ||arrToCount[i] === 'y')
+     vowelTotal = vowelTotal + 1;
+  }
+  return vowelTotal
+}
 
-
+console.log(vowCount('is y aaAAAAAAa vowel the thing goes aeiou and sometimes y meh who knows'))
 
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
+let playerChoice = prompt("Choose: Rock, Paper, or Scissors");
+let pc = playerChoice.toLowerCase();
+console.log(pc);
 
+var playerChoiceNumber = function(c) {
+  if (c == 'rock'){
+    return 1;
+  }else if (c == 'paper'){
+    return 2;
+  }else if (c == 'scissors') {
+    return 3;
+  }else {
+    console.log("Hmm appears you didnt choose a correct choice");
+  }
+}
+
+//1 = rock, 2 = paper, 3 = scissors
+var computerChoice = function () {
+  let choice = Math.random();
+  if(choice < .34){
+    return 1;
+  }else if (choice >= .34 && choice < .67){
+    return 2;
+  }else{
+    return 3;
+  }
+}
+let playerC = 2;
+let plaRPS = playerChoiceNumber(pc);
+let comRPS = computerChoice();
+
+var rpsGame = function(compC, playerC) {
+  if (compC == 1 && playerC ==1 ) {
+    console.log("Computer also chose rock it's a tie")
+  }else if (compC == 1 && playerC == 2) {
+    console.log("Computer chose rock you win")
+  }else if (compC == 1 && playerC == 3) {
+    console.log("Computer chose rock computer wins")
+  }else if (compC == 2 && playerC == 1) {
+    console.log("Computer chose paper computer wins")
+  }else if (compC == 2 && playerC == 2) {
+    console.log("Computer also chose paper its a tie")
+  }else if (compC == 2 && playerC == 3) {
+    console.log("Computer chose paper you win")
+  }else if (compC == 3 && playerC == 2) {
+    console.log("Computer chose scissors computer wins")
+  }else if (compC == 3 && playerC == 1) {
+    console.log("Computer chose scissors you win")
+  }else if (compC == 3 && playerC == 3) {
+    console.log("Computer also chose scissors its a tie")
+  }
+}
+
+rpsGame(comRPS,plaRPS)
 
 
 
